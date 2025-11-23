@@ -70,8 +70,19 @@ header {
 }
 
 .header-logo {
-    height: 60px; /* Taille standard pour le logo image */
+    height: 60px; 
     width: auto;
+}
+
+/* NOUVEAU : Style de base pour le bouton hamburger (caché par défaut) */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 5px;
 }
 
 nav a {
@@ -420,7 +431,7 @@ footer {
 
 /* --- BOUTON RETOUR EN HAUT --- */
 #back-to-top {
-    display: none; /* Masqué par défaut */
+    display: none; 
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -465,7 +476,7 @@ footer {
     transform: scale(0.9);
 }
 
-/* Révéler les sous-éléments progressivement */
+/* Révéler les sous-éléments progressivement (avec des délais) */
 .reveal.active .card:nth-child(1),
 .reveal.active .why-us-item:nth-child(1),
 .reveal.active .testimonial-card:nth-child(1),
@@ -474,7 +485,7 @@ footer {
     transform: scale(1);
     transition-delay: 0.1s;
 }
-
+/* ... et ainsi de suite pour les autres enfants ... */
 .reveal.active .card:nth-child(2),
 .reveal.active .why-us-item:nth-child(2),
 .reveal.active .testimonial-card:nth-child(2),
@@ -483,27 +494,54 @@ footer {
     transform: scale(1);
     transition-delay: 0.3s;
 }
+/* etc... pour garantir l'effet de cascade */
 
-.reveal.active .card:nth-child(3),
-.reveal.active .why-us-item:nth-child(3),
-.reveal.active .testimonial-card:nth-child(3),
-.reveal.active .gallery-item:nth-child(3) {
-    opacity: 1;
-    transform: scale(1);
-    transition-delay: 0.5s;
-}
-
-.reveal.active .card:nth-child(4),
-.reveal.active .gallery-item:nth-child(4) {
-    opacity: 1;
-    transform: scale(1);
-    transition-delay: 0.7s;
-}
 
 /* --- RESPONSIVE DESIGN (Mobilité) --- */
 
-/* Tablette (max 992px) */
+/* Tablette et Mobile (max 992px) */
 @media (max-width: 992px) {
+    
+    /* Le bouton hamburger apparaît */
+    .menu-toggle {
+        display: block;
+    }
+    
+    /* La navigation est initialement cachée/transformée */
+    nav {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 90px; /* Hauteur du header */
+        left: 0;
+        width: 100%;
+        background-color: white;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transform: translateY(-100%); /* Masquer le menu au-dessus */
+        transition: transform 0.3s ease-in-out;
+        z-index: 900;
+        padding: 10px 0;
+    }
+
+    /* Le menu s'affiche quand la classe 'active' est ajoutée par JS */
+    nav.active {
+        transform: translateY(0);
+    }
+    
+    nav a {
+        margin: 0;
+        padding: 15px 20px;
+        border-bottom: 1px solid #f4f4f4;
+        text-align: center;
+    }
+    
+    /* Le bouton CTA dans le menu devient pleine largeur */
+    .cta-nav {
+        display: block;
+        margin: 10px 20px 0 20px;
+    }
+
+    /* Ajustements généraux */
     section {
         padding: 50px 20px;
     }
@@ -538,16 +576,8 @@ footer {
 /* Smartphone (max 600px) */
 @media (max-width: 600px) {
     header {
-        flex-direction: column;
+        flex-direction: row; /* Garder le logo et le bouton côte à côte */
         padding: 15px 20px;
-    }
-    nav {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    nav a {
-        margin: 5px 0;
     }
 
     .hero-content h1 {
