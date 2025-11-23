@@ -18,12 +18,17 @@
   <div class="logo-container">
     <img src="logo_waddi.png" alt="Logo WADDI Étanchéité & Isolation" class="header-logo">
   </div>
-  <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Services</a>
-    <a href="#pourquoi">Avantages</a>
-    <a href="#realisations">Réalisations</a>
-    <a href="#devis" class="cta-nav">Devis Gratuit</a>
+  
+  <button class="menu-toggle" aria-label="Ouvrir le menu de navigation" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+  
+  <nav id="main-nav">
+    <a href="#accueil" onclick="closeMenu()">Accueil</a>
+    <a href="#services" onclick="closeMenu()">Services</a>
+    <a href="#pourquoi" onclick="closeMenu()">Avantages</a>
+    <a href="#realisations" onclick="closeMenu()">Réalisations</a>
+    <a href="#devis" class="cta-nav" onclick="closeMenu()">Devis Gratuit</a>
   </nav>
 </header>
 
@@ -181,7 +186,31 @@
 </button>
 
 <script>
-    // --- Fonction d'Animation (Reveal) ---
+    // --- Logique du Menu Hamburger ---
+    function toggleMenu() {
+        const nav = document.getElementById('main-nav');
+        const icon = document.querySelector('.menu-toggle i');
+        nav.classList.toggle('active');
+        // Change l'icône entre hamburger et croix
+        if (nav.classList.contains('active')) {
+            icon.classList.remove('fa-bars');
+            icon.classList.add('fa-times');
+        } else {
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
+    }
+    
+    // Ferme le menu après un clic sur un lien (pour UX mobile)
+    function closeMenu() {
+        if (window.innerWidth <= 992) {
+            document.getElementById('main-nav').classList.remove('active');
+            document.querySelector('.menu-toggle i').classList.remove('fa-times');
+            document.querySelector('.menu-toggle i').classList.add('fa-bars');
+        }
+    }
+
+    // --- Fonction d'Animation (Reveal) et Bouton Retour en Haut ---
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
         var windowHeight = window.innerHeight;
