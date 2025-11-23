@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <meta name="description" content="WADDI : Votre expert en étanchéité de toiture et terrasse à Clamart (92). Isolation thermique, réparation d'infiltration et garantie décennale. Demandez un devis gratuit." />
   <title>WADDI – Experts Étanchéité & Isolation à Clamart</title>
 
@@ -13,7 +14,7 @@
 
 <header>
   <div class="logo-container">
-    <img src="logo_waddi.png" alt="Logo WADDI Étanchéité & Isolation" class="header-logo">
+    <img src="logo-waddi.png.jpg" alt="Logo WADDI Étanchéité & Isolation" class="header-logo">
   </div>
   <nav>
     <a href="#accueil">Accueil</a>
@@ -31,7 +32,7 @@
     <a href="#devis"><button class="cta-btn">Demander un Devis Personnalisé <i class="fas fa-arrow-right"></i></button></a>
   </div>
   <div class="hero-image">
-    <img src="toit_rouge_waddi.jpg" alt="Toiture étanche WADDI" class="hero-img">
+    <img src="hero-toit-rouge.jpg.jpg" alt="Toiture étanche et rouge WADDI" class="hero-img">
   </div>
 </section>
 
@@ -88,16 +89,16 @@
   <p class="subtitle">Qualité et savoir-faire appliqués sur chaque chantier.</p>
   <div class="gallery">
     <div class="gallery-item">
-        <img src="ouvriers_etancheite.jpg" alt="Réalisation étanchéité WADDI 1">
+        <img src="realisation1.jpg.webp" alt="Ouvriers effectuant l'étanchéité sur une toiture" loading="lazy">
     </div>
     <div class="gallery-item">
-        <img src="homme_balai_toiture.jpg" alt="Réalisation étanchéité WADDI 2">
+        <img src="realisation2.jpg.jpg" alt="Technicien WADDI sur un toit-terrasse en cours de finition" loading="lazy">
     </div>
     <div class="gallery-item">
-        <img src="peinture_grise_toiture.jpg" alt="Réalisation étanchéité WADDI 3">
+        <img src="realisation3.jpg.jpg" alt="Application d'une membrane d'étanchéité liquide grise" loading="lazy">
     </div>
     <div class="gallery-item">
-        <img src="isolation_toiture_waddi.jpg" alt="Réalisation Isolation Toiture WADDI 4">
+        <img src="isolation_toiture_waddi.jpg" alt="Réalisation Isolation Toiture WADDI 4" loading="lazy">
     </div>
   </div>
 </section>
@@ -105,14 +106,24 @@
 <section id="devis" class="devis-section">
   <h2><i class="fas fa-file-invoice"></i> Demandez Votre Devis Gratuit</h2>
   <p class="subtitle">Décrivez-nous votre projet, nous vous recontacterons sous 48h.</p>
-  <form action="submit_form.php" method="POST" id="devis-form">
+  
+  <form action="https://formsubmit.co/waddi.etanche@gmail.com" method="POST" id="devis-form">
     <input type="text" name="Nom" placeholder="Votre Nom Complet" required />
     <input type="tel" name="Telephone" placeholder="Votre Téléphone" required />
     <input type="email" name="Email" placeholder="Votre Email" required />
     <textarea name="Message" placeholder="Détaillez votre besoin (type de surface, m², localisation...)" required></textarea>
+    
+    <input type="hidden" name="_next" value="https://fatimakissi92.github.io/waddi-etancheite/#merci">
+    <input type="hidden" name="_subject" value="Nouveau Devis demandé sur le site WADDI">
+
     <button type="submit" id="submit-btn">Envoyer la Demande <i class="fas fa-paper-plane"></i></button>
     <p class="form-note">Nous nous engageons à protéger vos données personnelles.</p>
   </form>
+</section>
+
+<section id="merci" style="display:none; text-align:center; padding: 50px 20px;">
+    <h2>Merci ! Votre Demande a bien été envoyée.</h2>
+    <p>WADDI vous recontactera sous 48h pour discuter de votre projet.</p>
 </section>
 
 <section id="contact" class="contact-section">
@@ -140,15 +151,6 @@
   </div>
   <p>© 2025 WADDI – Étanchéité & Isolation. Tous droits réservés. | Mentions Légales</p>
 </footer>
-
-<script>
-    document.getElementById('devis-form').addEventListener('submit', function(e) {
-        // Empêche l'envoi réel du formulaire pour la démo, à retirer si vous utilisez un script PHP
-        e.preventDefault(); 
-        alert("Merci pour votre demande de devis ! WADDI vous recontactera sous 48h.");
-        this.reset(); // Réinitialise le formulaire
-    });
-</script>
 
 </body>
 </html>
