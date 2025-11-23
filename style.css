@@ -1,5 +1,4 @@
 
-
 /* --- VARIABLES ET RESET DE BASE --- */
 :root {
     --primary-color: #A31F34; /* Rouge/Bordeaux (Couleur WADDI) */
@@ -21,6 +20,7 @@ body {
     background: var(--bg-light);
     color: var(--text-dark);
     line-height: 1.6;
+    scroll-behavior: smooth; /* Défilement doux entre les sections */
 }
 
 /* Règle pour toutes les sections */
@@ -109,7 +109,7 @@ nav a:hover {
     align-items: center;
     justify-content: space-between;
     padding: 100px 40px;
-    background: linear-gradient(to right, var(--bg-light) 60%, #eee 40%); /* Fond légèrement dégradé */
+    background: linear-gradient(to right, var(--bg-light) 60%, #eee 40%); 
 }
 
 .hero-content {
@@ -230,6 +230,44 @@ nav a:hover {
 .why-us-item h3 {
     margin-top: 0;
     color: var(--secondary-color);
+}
+
+
+/* --- SECTION TÉMOIGNAGES --- */
+.testimonials {
+    background: var(--bg-light);
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.quote-icon {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.testimonial-card p {
+    font-style: italic;
+}
+
+.client-name {
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-top: 15px;
+    font-style: normal !important;
 }
 
 
@@ -380,8 +418,33 @@ footer {
     color: var(--primary-color);
 }
 
+/* --- BOUTON RETOUR EN HAUT --- */
+#back-to-top {
+    display: none; /* Masqué par défaut */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+    border: none;
+    outline: none;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    opacity: 0.8;
+    transition: opacity 0.3s, background-color 0.3s;
+    box-shadow: var(--shadow);
+}
 
-/* --- NOUVEAUX STYLES D'ANIMATION (REVEAL) --- */
+#back-to-top:hover {
+    background-color: var(--accent-color);
+    opacity: 1;
+}
+
+
+/* --- STYLES D'ANIMATION (REVEAL) --- */
 
 .reveal {
     position: relative;
@@ -395,14 +458,17 @@ footer {
     transform: translateY(0);
 }
 
-.card, .why-us-item, .gallery-item {
+/* Animation des sous-éléments (cartes, témoignages, etc.) */
+.card, .why-us-item, .testimonial-card, .gallery-item {
     transition: all 0.5s ease-out;
     opacity: 0;
     transform: scale(0.9);
 }
 
+/* Révéler les sous-éléments progressivement */
 .reveal.active .card:nth-child(1),
 .reveal.active .why-us-item:nth-child(1),
+.reveal.active .testimonial-card:nth-child(1),
 .reveal.active .gallery-item:nth-child(1) {
     opacity: 1;
     transform: scale(1);
@@ -411,6 +477,7 @@ footer {
 
 .reveal.active .card:nth-child(2),
 .reveal.active .why-us-item:nth-child(2),
+.reveal.active .testimonial-card:nth-child(2),
 .reveal.active .gallery-item:nth-child(2) {
     opacity: 1;
     transform: scale(1);
@@ -419,6 +486,7 @@ footer {
 
 .reveal.active .card:nth-child(3),
 .reveal.active .why-us-item:nth-child(3),
+.reveal.active .testimonial-card:nth-child(3),
 .reveal.active .gallery-item:nth-child(3) {
     opacity: 1;
     transform: scale(1);
@@ -453,7 +521,7 @@ footer {
         margin-top: 30px;
     }
 
-    .cards, .why-us-grid {
+    .cards, .why-us-grid, .testimonial-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
@@ -486,7 +554,7 @@ footer {
         font-size: 2.2em;
     }
 
-    .cards, .why-us-grid {
+    .cards, .why-us-grid, .testimonial-grid {
         grid-template-columns: 1fr; 
     }
     
