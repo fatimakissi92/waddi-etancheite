@@ -7,6 +7,8 @@
   <meta name="description" content="WADDI : Votre expert en étanchéité de toiture et terrasse à Clamart (92). Isolation thermique, réparation d'infiltration et garantie décennale. Demandez un devis gratuit." />
   <title>WADDI – Experts Étanchéité & Isolation à Clamart</title>
 
+  <link rel="icon" type="image/png" href="logo_waddi.png">
+  
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
@@ -84,6 +86,28 @@
     </div>
 </section>
 
+<section id="temoignages" class="testimonials reveal">
+    <h2><i class="fas fa-comments"></i> Nos Clients Témoignent</h2>
+    <p class="subtitle">La satisfaction de nos clients, notre meilleure publicité.</p>
+    <div class="testimonial-grid">
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"Intervention rapide et travail d'une propreté impeccable. Plus aucune infiltration depuis le passage de l'équipe WADDI sur notre toiture-terrasse."</p>
+            <p class="client-name">**Monsieur Dubois, Clamart**</p>
+        </div>
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"L'isolation thermique a fait baisser nos factures de chauffage de manière significative. Des professionnels de confiance que je recommande sans hésiter."</p>
+            <p class="client-name">**Madame Leroux, Meudon**</p>
+        </div>
+        <div class="testimonial-card">
+            <i class="fas fa-quote-left quote-icon"></i>
+            <p>"Devis clair et transparent, pas de mauvaise surprise. Le chantier a été mené dans les délais et le résultat est à la hauteur de nos attentes."</p>
+            <p class="client-name">**Copropriété, Issy-les-Moulineaux**</p>
+        </div>
+    </div>
+</section>
+
 <section id="realisations" class="gallery-section reveal">
   <h2><i class="fas fa-images"></i> Nos Dernières Réalisations</h2>
   <p class="subtitle">Qualité et savoir-faire appliqués sur chaque chantier.</p>
@@ -152,27 +176,44 @@
   <p>© 2025 WADDI – Étanchéité & Isolation. Tous droits réservés. | Mentions Légales</p>
 </footer>
 
+<button onclick="scrollToTop()" id="back-to-top" title="Retour en haut">
+    <i class="fas fa-arrow-up"></i>
+</button>
+
 <script>
+    // --- Fonction d'Animation (Reveal) ---
     function reveal() {
         var reveals = document.querySelectorAll(".reveal");
+        var windowHeight = window.innerHeight;
+        var elementVisible = 150; 
 
         for (var i = 0; i < reveals.length; i++) {
-            var windowHeight = window.innerHeight;
             var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 150; // Déclenchement 150px avant l'arrivée
-
             if (elementTop < windowHeight - elementVisible) {
                 reveals[i].classList.add("active");
             } else {
                 reveals[i].classList.remove("active");
             }
         }
+        
+        // --- Logique du Bouton Retour en Haut ---
+        var backToTopButton = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
     }
 
-    // Lance la fonction lorsque l'utilisateur fait défiler la page
+    // Fonction de défilement vers le haut
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+
     window.addEventListener("scroll", reveal);
-    
-    // Lance la fonction une fois au chargement pour révéler les éléments déjà visibles
     reveal(); 
 </script>
 
