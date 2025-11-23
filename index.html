@@ -14,7 +14,7 @@
 
 <header>
   <div class="logo-container">
-    <img src="logo-waddi.png.jpg" alt="Logo WADDI Étanchéité & Isolation" class="header-logo">
+    <img src="logo_waddi.png" alt="Logo WADDI Étanchéité & Isolation" class="header-logo">
   </div>
   <nav>
     <a href="#accueil">Accueil</a>
@@ -32,7 +32,7 @@
     <a href="#devis"><button class="cta-btn">Demander un Devis Personnalisé <i class="fas fa-arrow-right"></i></button></a>
   </div>
   <div class="hero-image">
-    <img src="hero-toit-rouge.jpg.jpg" alt="Toiture étanche et rouge WADDI" class="hero-img">
+    <img src="toit_rouge_waddi.jpg" alt="Toiture étanche et rouge WADDI" class="hero-img">
   </div>
 </section>
 
@@ -89,25 +89,17 @@
   <p class="subtitle">Qualité et savoir-faire appliqués sur chaque chantier.</p>
   <div class="gallery">
     <div class="gallery-item">
-        <img src="realisation1.jpg.webp" alt="Ouvriers effectuant l'étanchéité sur une toiture" loading="lazy">
+        <img src="homme_balai_toiture.jpg" alt="Ouvriers effectuant l'étanchéité sur une toiture" loading="lazy">
     </div>
     <div class="gallery-item">
-        <img src="logo_waddi.png" alt="Logo WADDI Étanchéité & Isolation" class="header-logo">
-
-<img src="toit_rouge_waddi.jpg" alt="Toiture étanche et rouge WADDI" class="hero-img">
-
-<div class="gallery-item">
-    <img src="homme_balai_toiture.jpg" alt="Ouvriers effectuant l'étanchéité sur une toiture" loading="lazy">
-</div>
-<div class="gallery-item">
-    <img src="peinture_grise_toiture.jpg" alt="Technicien WADDI sur un toit-terrasse en cours de finition" loading="lazy">
-</div>
-<div class="gallery-item">
-    <img src="ouvriers_etancheite.jpg" alt="Application d'une membrane d'étanchéité liquide grise" loading="lazy">
-</div>
-<div class="gallery-item">
-    <img src="isolation_toiture_waddi.jpg" alt="Réalisation Isolation Toiture WADDI 4" loading="lazy">
-</div>
+        <img src="peinture_grise_toiture.jpg" alt="Technicien WADDI sur un toit-terrasse en cours de finition" loading="lazy">
+    </div>
+    <div class="gallery-item">
+        <img src="ouvriers_etancheite.jpg" alt="Application d'une membrane d'étanchéité liquide grise" loading="lazy">
+    </div>
+    <div class="gallery-item">
+        <img src="isolation_toiture_waddi.jpg" alt="Réalisation Isolation Toiture WADDI 4" loading="lazy">
+    </div>
   </div>
 </section>
 
@@ -154,8 +146,8 @@
 
 <footer>
   <div class="footer-links">
-    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
   </div>
   <p>© 2025 WADDI – Étanchéité & Isolation. Tous droits réservés. | Mentions Légales</p>
 </footer>
@@ -167,7 +159,7 @@
         for (var i = 0; i < reveals.length; i++) {
             var windowHeight = window.innerHeight;
             var elementTop = reveals[i].getBoundingClientRect().top;
-            var elementVisible = 150; 
+            var elementVisible = 150; // Déclenchement 150px avant l'arrivée
 
             if (elementTop < windowHeight - elementVisible) {
                 reveals[i].classList.add("active");
@@ -177,7 +169,10 @@
         }
     }
 
+    // Lance la fonction lorsque l'utilisateur fait défiler la page
     window.addEventListener("scroll", reveal);
+    
+    // Lance la fonction une fois au chargement pour révéler les éléments déjà visibles
     reveal(); 
 </script>
 
