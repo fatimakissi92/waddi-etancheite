@@ -249,8 +249,8 @@ nav a:hover {
 
 .gallery-item img {
     width: 100%;
-    height: 200px; /* Hauteur fixe pour l'uniformité */
-    object-fit: cover; /* Assure que l'image couvre la zone sans déformation */
+    height: 200px; 
+    object-fit: cover; 
     display: block;
     transition: transform 0.5s;
 }
@@ -381,6 +381,57 @@ footer {
 }
 
 
+/* --- NOUVEAUX STYLES D'ANIMATION (REVEAL) --- */
+
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card, .why-us-item, .gallery-item {
+    transition: all 0.5s ease-out;
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.reveal.active .card:nth-child(1),
+.reveal.active .why-us-item:nth-child(1),
+.reveal.active .gallery-item:nth-child(1) {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.1s;
+}
+
+.reveal.active .card:nth-child(2),
+.reveal.active .why-us-item:nth-child(2),
+.reveal.active .gallery-item:nth-child(2) {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.3s;
+}
+
+.reveal.active .card:nth-child(3),
+.reveal.active .why-us-item:nth-child(3),
+.reveal.active .gallery-item:nth-child(3) {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.5s;
+}
+
+.reveal.active .card:nth-child(4),
+.reveal.active .gallery-item:nth-child(4) {
+    opacity: 1;
+    transform: scale(1);
+    transition-delay: 0.7s;
+}
+
 /* --- RESPONSIVE DESIGN (Mobilité) --- */
 
 /* Tablette (max 992px) */
@@ -391,7 +442,7 @@ footer {
     .hero {
         flex-direction: column;
         padding: 80px 20px;
-        background: var(--bg-light); /* Enlever le dégradé sur les petits écrans */
+        background: var(--bg-light); 
     }
     .hero-content {
         max-width: 100%;
@@ -436,11 +487,11 @@ footer {
     }
 
     .cards, .why-us-grid {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr; 
     }
     
     .gallery {
-        grid-template-columns: 1fr; /* Une seule colonne */
+        grid-template-columns: 1fr; 
     }
 
     .contact-info {
