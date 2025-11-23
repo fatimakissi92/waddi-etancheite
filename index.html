@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WADDI – Experts Étanchéité & Isolation à Clamart</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+
+<header>
+  <div class="logo-container">WADDI</div>
+  <nav>
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#pourquoi">Avantages</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#devis" class="cta-nav">Devis Gratuit</a>
+  </nav>
+</header>
+
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <h1>WADDI : Protégez votre Bâtiment avec Expertise</h1>
+    <p>Experts en **étanchéité toiture & terrasse** depuis 2013. Intervention rapide et garantie décennale sur Clamart et les Hauts-de-Seine (92).</p>
+    <a href="#devis"><button class="cta-btn">Demander un Devis Personnalisé <i class="fas fa-arrow-right"></i></button></a>
+  </div>
+  <div class="hero-image placeholder" style="background-color: #42a5f5;">[Emplacement pour votre Image de Toiture Étanche]</div>
+</section>
+
+<section id="services" class="card-section">
+  <h2><i class="fas fa-tools"></i> Nos Domaines d'Expertise</h2>
+  <p class="subtitle">Des solutions complètes pour la pérennité et la performance énergétique de vos structures.</p>
+  <div class="cards">
+    <div class="card">
+        <i class="fas fa-layer-group card-icon"></i>
+        <h3>Étanchéité Toiture</h3>
+        <p>Protection totale contre les intempéries pour toits plats, inclinés, et terrasses accessibles.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-warehouse card-icon"></i>
+        <h3>Étanchéité Terrasse</h3>
+        <p>Systèmes d'étanchéité durables pour terrasses, balcons et parkings, avec ou sans revêtement.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-search-dollar card-icon"></i>
+        <h3>Réparation Infiltration</h3>
+        <p>Diagnostic rapide et réparation ciblée des fuites et des points d'infiltration critiques.</p>
+    </div>
+    <div class="card">
+        <i class="fas fa-thermometer-half card-icon"></i>
+        <h3>Isolation Thermique</h3>
+        <p>Solutions d'isolation par l'extérieur ou intérieur pour améliorer votre DPE et réduire vos coûts.</p>
+    </div>
+  </div>
+</section>
+
+<section id="pourquoi" class="why-us">
+    <h2><i class="fas fa-check-circle"></i> Pourquoi Choisir WADDI ?</h2>
+    <div class="why-us-grid">
+        <div class="why-us-item">
+            <i class="fas fa-star why-us-icon"></i>
+            <h3>Expertise Certifiée</h3>
+            <p>Plus de 10 ans d'expérience et des matériaux conformes aux normes DTU.</p>
+        </div>
+        <div class="why-us-item">
+            <i class="fas fa-shield-alt why-us-icon"></i>
+            <h3>Garantie Décennale</h3>
+            <p>Tous nos travaux sont couverts par une assurance décennale complète.</p>
+        </div>
+        <div class="why-us-item">
+            <i class="fas fa-clock why-us-icon"></i>
+            <h3>Intervention Rapide</h3>
+            <p>Réactivité assurée pour les urgences à Clamart et dans les communes voisines.</p>
+        </div>
+    </div>
+</section>
+
+<section id="realisations" class="gallery-section">
+  <h2><i class="fas fa-images"></i> Nos Dernières Réalisations</h2>
+  <p class="subtitle">Qualité et savoir-faire appliqués sur chaque chantier.</p>
+  <div class="gallery">
+    <div class="gallery-item placeholder" style="background-color: #4CAF50;">[Emplacement pour votre Projet 1]</div>
+    <div class="gallery-item placeholder" style="background-color: #FF9800;">[Emplacement pour votre Projet 2]</div>
+    <div class="gallery-item placeholder" style="background-color: #F44336;">[Emplacement pour votre Projet 3]</div>
+    <div class="gallery-item placeholder" style="background-color: #2196F3;">[Emplacement pour votre Projet 4]</div>
+  </div>
+</section>
+
+<section id="devis" class="devis-section">
+  <h2><i class="fas fa-file-invoice"></i> Demandez Votre Devis Gratuit</h2>
+  <p class="subtitle">Décrivez-nous votre projet, nous vous recontacterons sous 48h.</p>
+  <form action="submit_form.php" method="POST" id="devis-form">
+    <input type="text" name="Nom" placeholder="Votre Nom Complet" required />
+    <input type="tel" name="Telephone" placeholder="Votre Téléphone" required />
+    <input type="email" name="Email" placeholder="Votre Email" required />
+    <textarea name="Message" placeholder="Détaillez votre besoin (type de surface, m², localisation...)" required></textarea>
+    <button type="submit" id="submit-btn">Envoyer la Demande <i class="fas fa-paper-plane"></i></button>
+    <p class="form-note">Nous nous engageons à protéger vos données personnelles.</p>
+  </form>
+</section>
+
+<section id="contact" class="contact-section">
+  <h2><i class="fas fa-map-marker-alt"></i> Contactez WADDI</h2>
+  <div class="contact-info">
+    <div>
+        <h3><i class="fas fa-phone-alt"></i> Téléphone</h3>
+        <p><a href="tel:0749739724">07 49 73 97 24</a></p>
+    </div>
+    <div>
+        <h3><i class="fas fa-envelope"></i> Email</h3>
+        <p><a href="mailto:waddi.etanche@gmail.com">waddi.etanche@gmail.com</a></p>
+    </div>
+    <div>
+        <h3><i class="fas fa-home"></i> Adresse</h3>
+        <p>17 rue du Général Eisenhower, 92140 Clamart</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+  <p>© 2025 WADDI – Étanchéité & Isolation. Tous droits réservés. | Mentions Légales</p>
+</footer>
+
+<script>
+    document.getElementById('devis-form').addEventListener('submit', function(e) {
+        // Empêche l'envoi réel du formulaire pour la démo, à retirer si vous utilisez un script PHP
+        e.preventDefault(); 
+        alert("Merci pour votre demande de devis ! WADDI vous recontactera sous 48h.");
+        this.reset(); // Réinitialise le formulaire
+    });
+</script>
+
+</body>
+</html>
