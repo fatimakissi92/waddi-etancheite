@@ -36,7 +36,7 @@
   </div>
 </section>
 
-<section id="services" class="card-section">
+<section id="services" class="card-section reveal">
   <h2><i class="fas fa-tools"></i> Nos Domaines d'Expertise</h2>
   <p class="subtitle">Des solutions complètes pour la pérennité et la performance énergétique de vos structures.</p>
   <div class="cards">
@@ -63,7 +63,7 @@
   </div>
 </section>
 
-<section id="pourquoi" class="why-us">
+<section id="pourquoi" class="why-us reveal">
     <h2><i class="fas fa-check-circle"></i> Pourquoi Choisir WADDI ?</h2>
     <div class="why-us-grid">
         <div class="why-us-item">
@@ -84,7 +84,7 @@
     </div>
 </section>
 
-<section id="realisations" class="gallery-section">
+<section id="realisations" class="gallery-section reveal">
   <h2><i class="fas fa-images"></i> Nos Dernières Réalisations</h2>
   <p class="subtitle">Qualité et savoir-faire appliqués sur chaque chantier.</p>
   <div class="gallery">
@@ -103,7 +103,7 @@
   </div>
 </section>
 
-<section id="devis" class="devis-section">
+<section id="devis" class="devis-section reveal">
   <h2><i class="fas fa-file-invoice"></i> Demandez Votre Devis Gratuit</h2>
   <p class="subtitle">Décrivez-nous votre projet, nous vous recontacterons sous 48h.</p>
   
@@ -126,7 +126,7 @@
     <p>WADDI vous recontactera sous 48h pour discuter de votre projet.</p>
 </section>
 
-<section id="contact" class="contact-section">
+<section id="contact" class="contact-section reveal">
   <h2><i class="fas fa-map-marker-alt"></i> Contactez WADDI</h2>
   <div class="contact-info">
     <div>
@@ -151,6 +151,27 @@
   </div>
   <p>© 2025 WADDI – Étanchéité & Isolation. Tous droits réservés. | Mentions Légales</p>
 </footer>
+
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150; 
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
+    reveal(); 
+</script>
 
 </body>
 </html>
